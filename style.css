@@ -1,0 +1,538 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f3;
+  color: #181818;
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  padding: 20px 8%;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e7e7e7;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo-icon {
+  font-size: 26px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #777;
+
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+  background: #181818;
+  color: #ffffff;
+}
+
+/* =========================
+   LOGO DA NAVBAR
+ 
+   O PNG tem muito espaço transparente ao redor da logo.
+   O .brand funciona como uma "janela" que mostra só a parte útil.
+   Para aumentar/diminuir a logo, mude apenas o --s.
+========================= */
+
+.navbar .brand {
+  --s: 115px; /* largura do PNG renderizado (a logo visível é ~43% disso) */
+
+  position: relative;
+  display: block;
+
+  width: calc(var(--s) * 0.48);
+  height: 46px;
+
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.navbar .brand img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: var(--s);
+  height: auto;
+  max-width: none;
+
+  transform: translate(-50%, -50%);
+
+  display: block;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 330px;
+
+  padding: 70px 8%;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.hero h1 {
+  margin-top: 12px;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 1;
+
+  letter-spacing: -4px;
+}
+
+.hero p {
+  margin-top: 20px;
+
+  color: #777;
+
+  max-width: 480px;
+}
+
+.hero-icon {
+  width: 150px;
+  height: 150px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 75px;
+
+  background: #f5f5f3;
+
+  transform: rotate(-8deg);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  width: min(1000px, 84%);
+  margin: 60px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+  background: #ffffff;
+
+  padding: 35px;
+
+  border: 1px solid #e7e7e7;
+
+  border-radius: 20px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+.number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #181818;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.section-title h2 {
+  font-size: 22px;
+}
+
+.section-title p {
+  color: #888;
+  font-size: 14px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr auto;
+
+  gap: 15px;
+
+  align-items: end;
+}
+
+.form-group,
+.search-area {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  background: #fafafa;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #181818;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 14px 20px;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: #181818;
+  color: white;
+}
+
+.btn-secondary {
+  background: #ededeb;
+  color: #181818;
+}
+
+/* =========================
+   PLAYLIST
+========================= */
+
+.playlist-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  background: #f5f5f3;
+
+  border-radius: 14px;
+
+  margin-bottom: 20px;
+}
+
+.counter {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.counter span {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.counter small {
+  color: #888;
+}
+
+.music-symbol {
+  font-size: 35px;
+}
+
+/* =========================
+   LISTA
+========================= */
+
+#listaMusicas {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+#listaMusicas li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 18px;
+
+  background: #fafafa;
+
+  border: 1px solid #eee;
+
+  border-radius: 12px;
+
+  transition: 0.3s ease;
+}
+
+#listaMusicas li:hover {
+  transform: translateX(5px);
+}
+
+#listaMusicas button {
+  background: transparent;
+
+  color: #999;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#listaMusicas button:hover {
+  color: #111;
+}
+
+/* =========================
+   MÚSICAS JUNTAS
+========================= */
+
+.music-list-box {
+  padding: 20px;
+
+  background: #f5f5f3;
+
+  border-radius: 12px;
+
+  color: #555;
+}
+
+/* =========================
+   BUSCA
+========================= */
+
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.resultado-filtro {
+  margin-top: 20px;
+}
+
+.resultado-filtro p {
+  padding: 12px 15px;
+
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 45px 8%;
+
+  background: #181818;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* LOGO DO FOOTER
+   Sem wrapper no HTML: o recorte é feito com clip-path
+   e as margens negativas removem o espaço transparente. */
+
+footer img {
+  --s: 130px;
+
+  display: block;
+
+  width: var(--s);
+  max-width: none;
+  height: auto;
+
+  margin: calc(var(--s) * -0.405) auto calc(var(--s) * -0.405 + 6px);
+
+  clip-path: inset(calc(var(--s) * 0.405) calc(var(--s) * 0.26));
+}
+
+footer p {
+  color: #aaa;
+  margin: 5px 0 15px;
+}
+
+footer small {
+  color: #666;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 750px) {
+  .navbar,
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .hero-icon {
+    display: none;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  main {
+    width: 90%;
+  }
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>vibeOn | Now Playing</title>
+
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <header class="topbar">
+      <a href="tela3.html" class="brand">
+        <img src="./img/logoclaro.png" alt="vibeOn" />
+      </a>
+
+      <nav>
+        <a href="index.html"> Tela 1 </a>
+
+        <a href="tela2.html"> Tela 2 </a>
+
+        <a href="tela3.html" class="active"> Tela 3 </a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- NOW PLAYING -->
+
+      <section class="now-playing">
+        <div class="cover">
+          <div class="cover-ring"></div>
+
+          <img src="./img/logoclaro.png" alt="vibeOn" />
+        </div>
+
+        <div class="now-info">
+          <span class="eyebrow"> YOUR VIBE / PLAYLIST </span>
+
+          <h1>
+            Now<br />
+
+            <span> Playing. </span>
+          </h1>
+
+          <p>
+            Organize suas músicas e crie uma sequência que tenha a sua cara.
+          </p>
+
+          <!-- PLAYER VISUAL -->
+
+          <div class="fake-player">
+            <div class="player-time">
+              <span> 00:00 </span>
+
+              <span> VIBEON </span>
+
+              <span> 03:42 </span>
+            </div>
+
+            <div class="progress">
+              <span></span>
+            </div>
+
+            <div class="player-controls">
+              <button type="button">‹</button>
+
+              <button type="button" class="play">▶</button>
+
+              <button type="button">›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÁREA PRINCIPAL -->
+
+      <section class="workspace">
+        <!-- ADICIONAR -->
+
+        <aside class="quick-add">
+          <span class="eyebrow"> 01 / QUICK ADD </span>
+
+          <h2>
+            Adicionar<br />
+            uma faixa.
+          </h2>
+
+          <form id="formAdicionar">
+            <label for="nomeMusica"> Música </label>
+
+            <input
+              type="text"
+              id="nomeMusica"
+              placeholder="Nome da música"
+              required
+            />
+
+            <label for="nomeArtista"> Artista </label>
+
+            <input
+              type="text"
+              id="nomeArtista"
+              placeholder="Nome do artista"
+              required
+            />
+
+            <button type="submit">Adicionar música</button>
+          </form>
+        </aside>
+
+        <!-- FILA -->
+
+        <section class="tracks">
+          <div class="tracks-head">
+            <div>
+              <span class="eyebrow"> 02 / QUEUE </span>
+
+              <h2>Minha fila</h2>
+            </div>
+
+            <div class="track-count">
+              <strong id="contadorMusicas"> 0 </strong>
+
+              <span> músicas </span>
+            </div>
+          </div>
+
+          <ul id="listaMusicas"></ul>
+
+          <div class="all-songs">
+            <span> 03 </span>
+
+            <div>
+              <small> PLAYLIST SEQUENCE </small>
+
+              <p id="musicasJuntas">Nenhuma música adicionada.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- BUSCAR -->
+
+      <section class="discover">
+        <div>
+          <span class="eyebrow"> 04 / DISCOVER </span>
+
+          <h2>
+            Filtre por<br />
+
+            <span> artista. </span>
+          </h2>
+        </div>
+
+        <div>
+          <div class="discover-search">
+            <input
+              type="text"
+              id="artistaFiltro"
+              placeholder="Digite o nome do artista"
+            />
+
+            <button type="button" id="btnFiltrar">Buscar</button>
+          </div>
+
+          <div id="resultadoFiltro"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <img src="./img/logoclaro.png" alt="vibeOn" />
+
+      <span> LISTEN TO YOUR VIBE. </span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

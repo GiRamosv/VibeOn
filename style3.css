@@ -1,0 +1,686 @@
+CSS
+/* =========================
+   RESET
+========================= */
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #070708;
+
+  color: #eeeeee;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.topbar {
+  height: 76px;
+
+  padding: 0 6%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #202023;
+
+  background: #070708;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 20;
+}
+
+nav {
+  display: flex;
+
+  gap: 7px;
+}
+
+nav a {
+  color: #666;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  padding: 9px 14px;
+
+  border-radius: 7px;
+
+  transition: 0.25s;
+}
+
+nav a:hover,
+nav .active {
+  background: #eee;
+
+  color: #111;
+}
+
+/* =========================
+   LOGO NAVBAR
+ 
+   O PNG tem muito espaço transparente ao redor da logo.
+   O .brand funciona como uma "janela" que mostra só a parte útil.
+   Para aumentar/diminuir a logo, mude apenas o --s.
+========================= */
+
+.topbar .brand {
+  --s: 115px; /* largura do PNG renderizado (a logo visível é ~43% disso) */
+
+  position: relative;
+  display: block;
+
+  width: calc(var(--s) * 0.48);
+  height: 46px;
+
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.topbar .brand img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: var(--s);
+  height: auto;
+  max-width: none;
+
+  transform: translate(-50%, -50%);
+
+  display: block;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  width: min(1150px, 88%);
+
+  margin: 55px auto;
+}
+
+/* =========================
+   NOW PLAYING
+========================= */
+
+.now-playing {
+  display: grid;
+
+  grid-template-columns:
+    340px
+    1fr;
+
+  min-height: 440px;
+
+  border: 1px solid #242428;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #101012;
+}
+
+/* CAPA */
+
+.cover {
+  --s: 300px; /* PNG renderizado; a logo visível fica com ~130px, dentro do anel */
+
+  background: #151518;
+
+  display: grid;
+
+  place-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.cover img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: var(--s);
+  height: auto;
+  max-width: none;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+
+  display: block;
+}
+
+.cover-ring {
+  position: absolute;
+
+  width: 235px;
+
+  height: 235px;
+
+  border: 1px solid #3a3a3d;
+
+  border-radius: 50%;
+
+  animation: rotate 16s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* INFORMAÇÕES */
+
+.now-info {
+  padding: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.eyebrow {
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #666;
+
+  font-weight: 700;
+}
+
+.now-info h1 {
+  font-size: clamp(55px, 8vw, 100px);
+
+  line-height: 0.83;
+
+  letter-spacing: -7px;
+
+  margin: 18px 0;
+}
+
+.now-info h1 span {
+  color: #555;
+}
+
+.now-info > p {
+  max-width: 480px;
+
+  color: #777;
+}
+
+/* =========================
+   PLAYER
+========================= */
+
+.fake-player {
+  margin-top: 35px;
+
+  max-width: 520px;
+}
+
+.player-time {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #555;
+
+  font-size: 9px;
+}
+
+.progress {
+  height: 3px;
+
+  background: #28282c;
+
+  margin: 10px 0 18px;
+}
+
+.progress span {
+  display: block;
+
+  width: 38%;
+
+  height: 100%;
+
+  background: #eee;
+}
+
+.player-controls {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+}
+
+.player-controls button {
+  border: 0;
+
+  background: transparent;
+
+  color: #888;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.player-controls .play {
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #eee;
+
+  color: #111;
+
+  font-size: 13px;
+}
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace {
+  display: grid;
+
+  grid-template-columns:
+    310px
+    1fr;
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.quick-add,
+.tracks {
+  border: 1px solid #242428;
+
+  border-radius: 18px;
+
+  background: #101012;
+
+  padding: 30px;
+}
+
+/* =========================
+   QUICK ADD
+========================= */
+
+.quick-add h2 {
+  font-size: 38px;
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+
+  margin: 18px 0 35px;
+}
+
+.quick-add form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.quick-add label {
+  font-size: 9px;
+
+  color: #666;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.quick-add input {
+  padding: 13px;
+
+  background: #08080a;
+
+  color: #eee;
+
+  border: 1px solid #29292d;
+
+  border-radius: 8px;
+
+  outline: 0;
+
+  font: inherit;
+}
+
+.quick-add input:focus {
+  border-color: #777;
+}
+
+.quick-add button,
+.discover button {
+  border: 0;
+
+  padding: 13px 16px;
+
+  border-radius: 8px;
+
+  background: #eee;
+
+  color: #111;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  margin-top: 8px;
+}
+
+/* =========================
+   TRACKS
+========================= */
+
+.tracks-head {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  margin-bottom: 25px;
+}
+
+.tracks h2 {
+  font-size: 31px;
+
+  margin-top: 8px;
+}
+
+.track-count {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 7px;
+}
+
+.track-count strong {
+  font-size: 43px;
+}
+
+.track-count span {
+  font-size: 10px;
+
+  color: #666;
+}
+
+/* LISTA */
+
+#listaMusicas {
+  list-style: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+#listaMusicas li {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px;
+
+  background: #0a0a0c;
+
+  border: 1px solid #202024;
+
+  border-radius: 8px;
+
+  transition: 0.25s;
+}
+
+#listaMusicas li:hover {
+  transform: translateX(5px);
+
+  border-color: #444;
+}
+
+#listaMusicas button {
+  border: 0;
+
+  background: transparent;
+
+  color: #555;
+
+  cursor: pointer;
+}
+
+#listaMusicas button:hover {
+  color: white;
+}
+
+/* TODAS AS MÚSICAS */
+
+.all-songs {
+  display: flex;
+
+  gap: 14px;
+
+  align-items: center;
+
+  margin-top: 16px;
+
+  padding: 16px;
+
+  border: 1px dashed #303035;
+
+  border-radius: 8px;
+}
+
+.all-songs > span {
+  color: #555;
+}
+
+.all-songs small {
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #555;
+}
+
+.all-songs p {
+  color: #888;
+
+  margin-top: 5px;
+}
+
+/* =========================
+   DISCOVER
+========================= */
+
+.discover {
+  margin-top: 18px;
+
+  padding: 45px;
+
+  border: 1px solid #242428;
+
+  border-radius: 18px;
+
+  background: #101012;
+
+  display: grid;
+
+  grid-template-columns:
+    0.7fr
+    1.3fr;
+
+  gap: 70px;
+}
+
+.discover h2 {
+  font-size: 42px;
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+
+  margin-top: 12px;
+}
+
+.discover h2 span {
+  color: #555;
+}
+
+.discover-search {
+  display: flex;
+
+  gap: 10px;
+}
+
+.discover input {
+  flex: 1;
+
+  padding: 14px;
+
+  background: #08080a;
+
+  color: #eee;
+
+  border: 1px solid #29292d;
+
+  border-radius: 8px;
+
+  outline: 0;
+
+  font: inherit;
+}
+
+.discover button {
+  margin: 0;
+}
+
+#resultadoFiltro {
+  margin-top: 18px;
+}
+
+#resultadoFiltro p {
+  padding: 11px 0;
+
+  border-bottom: 1px solid #252528;
+
+  color: #999;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: 70px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  border-top: 1px solid #202023;
+}
+
+/* LOGO DO FOOTER
+   Sem wrapper no HTML: o recorte é feito com clip-path
+   e as margens negativas removem o espaço transparente. */
+
+footer img {
+  --s: 130px;
+
+  display: block;
+
+  width: var(--s);
+  max-width: none;
+  height: auto;
+
+  margin: calc(var(--s) * -0.405) auto calc(var(--s) * -0.405 + 10px);
+
+  clip-path: inset(calc(var(--s) * 0.405) calc(var(--s) * 0.26));
+}
+
+footer span {
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #555;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 850px) {
+  .now-playing {
+    grid-template-columns: 1fr;
+  }
+
+  .cover {
+    --s: 260px;
+
+    min-height: 280px;
+  }
+
+  .now-info {
+    padding: 35px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .discover {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  main {
+    width: 92%;
+  }
+}

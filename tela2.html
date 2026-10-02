@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>vibeOn | Library</title>
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+      <a href="tela2.html" class="brand">
+        <img src="./img/logoclaro.png" alt="vibeOn" />
+      </a>
+
+      <span class="side-title"> NAVEGAÇÃO </span>
+
+      <a href="index.html">
+        01
+        <span>Tela 1</span>
+      </a>
+
+      <a href="tela2.html" class="active">
+        02
+        <span>Tela 2</span>
+      </a>
+
+      <a href="tela3.html">
+        03
+        <span>Tela 3</span>
+      </a>
+
+      <div class="side-message">
+        <span>VIBE OF THE DAY</span>
+
+        <p>Adicione uma música e deixe sua playlist crescer.</p>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <main class="library">
+      <!-- CABEÇALHO -->
+
+      <header class="library-header">
+        <div>
+          <span class="eyebrow"> YOUR PERSONAL MUSIC LIBRARY </span>
+
+          <h1>
+            Minha<br />
+            <span>playlist.</span>
+          </h1>
+        </div>
+
+        <div class="logo-circle">
+          <img src="./img/logoclaro.png" alt="vibeOn" />
+        </div>
+      </header>
+
+      <!-- ADICIONAR -->
+
+      <section class="composer">
+        <div class="composer-title">
+          <span>01</span>
+
+          <div>
+            <h2>Adicionar faixa</h2>
+
+            <p>Construa sua seleção.</p>
+          </div>
+        </div>
+
+        <form id="formAdicionar">
+          <div class="field">
+            <label for="nomeMusica"> Música </label>
+
+            <input
+              type="text"
+              id="nomeMusica"
+              placeholder="Nome da música"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="nomeArtista"> Artista </label>
+
+            <input
+              type="text"
+              id="nomeArtista"
+              placeholder="Nome do artista"
+              required
+            />
+          </div>
+
+          <button type="submit">Adicionar +</button>
+        </form>
+      </section>
+
+      <!-- PLAYLIST -->
+
+      <section class="library-list">
+        <div class="list-header">
+          <div>
+            <span class="eyebrow"> 02 / COLLECTION </span>
+
+            <h2>Faixas salvas</h2>
+          </div>
+
+          <div class="total">
+            <strong id="contadorMusicas"> 0 </strong>
+
+            <span> TRACKS </span>
+          </div>
+        </div>
+
+        <ul id="listaMusicas"></ul>
+
+        <div class="all-tracks">
+          <span> ALL TRACKS </span>
+
+          <p id="musicasJuntas">Nenhuma música adicionada.</p>
+        </div>
+      </section>
+
+      <!-- BUSCAR -->
+
+      <section class="artist-search">
+        <div>
+          <span class="eyebrow"> 03 / FILTER </span>
+
+          <h2>
+            Encontre um<br />
+            artista.
+          </h2>
+        </div>
+
+        <div class="search-area">
+          <div class="search-row">
+            <input
+              type="text"
+              id="artistaFiltro"
+              placeholder="Ex: Taylor Swift"
+            />
+
+            <button type="button" id="btnFiltrar">Filtrar</button>
+          </div>
+
+          <div id="resultadoFiltro"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

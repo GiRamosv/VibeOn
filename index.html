@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>vibeOn | Minha Playlist</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <img src="./img/logoescuro.png" alt="vibeOn" />
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="ativo">Tela 1</a>
+        <a href="tela2.html">Tela 2</a>
+        <a href="tela3.html">Tela 3</a>
+      </div>
+    </nav>
+
+    <!-- CABEÇALHO -->
+    <header class="hero">
+      <div class="hero-text">
+        <span class="tag">SUA MÚSICA, SUA VIBE</span>
+
+        <h1>Minha Playlist</h1>
+
+        <p>Adicione suas músicas favoritas e crie uma playlist do seu jeito.</p>
+      </div>
+
+      <div class="hero-icon">♪</div>
+    </header>
+
+    <main>
+      <!-- ADICIONAR MÚSICA -->
+      <section class="card">
+        <div class="section-title">
+          <span class="number">01</span>
+
+          <div>
+            <h2>Adicionar música</h2>
+            <p>Inclua uma nova música na sua playlist.</p>
+          </div>
+        </div>
+
+        <form id="formAdicionar">
+          <div class="form-group">
+            <label for="nomeMusica"> Nome da música </label>
+
+            <input
+              type="text"
+              id="nomeMusica"
+              placeholder="Digite o nome da música"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="nomeArtista"> Artista </label>
+
+            <input
+              type="text"
+              id="nomeArtista"
+              placeholder="Digite o nome do artista"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-primary">+ Adicionar música</button>
+        </form>
+      </section>
+
+      <!-- PLAYLIST -->
+      <section class="card playlist-card">
+        <div class="section-title">
+          <span class="number">02</span>
+
+          <div>
+            <h2>Minha playlist</h2>
+            <p>Veja e gerencie suas músicas.</p>
+          </div>
+        </div>
+
+        <div class="playlist-info">
+          <div class="counter">
+            <span id="contadorMusicas">0</span>
+
+            <small> músicas </small>
+          </div>
+
+          <div class="music-symbol">♫</div>
+        </div>
+
+        <ul id="listaMusicas"></ul>
+      </section>
+
+      <!-- MÚSICAS JUNTAS -->
+      <section class="card">
+        <div class="section-title">
+          <span class="number">03</span>
+
+          <div>
+            <h2>Músicas da playlist</h2>
+            <p>Todas as músicas em uma única lista.</p>
+          </div>
+        </div>
+
+        <div class="music-list-box">
+          <p id="musicasJuntas">Nenhuma música adicionada.</p>
+        </div>
+      </section>
+
+      <!-- FILTRO -->
+      <section class="card">
+        <div class="section-title">
+          <span class="number">04</span>
+
+          <div>
+            <h2>Buscar por artista</h2>
+            <p>Encontre músicas de um artista específico.</p>
+          </div>
+        </div>
+
+        <div class="search-area">
+          <label for="artistaFiltro"> Nome do artista </label>
+
+          <div class="search-row">
+            <input
+              type="text"
+              id="artistaFiltro"
+              placeholder="Ex: Taylor Swift"
+            />
+
+            <button type="button" id="btnFiltrar" class="btn-secondary">
+              Buscar
+            </button>
+          </div>
+        </div>
+
+        <div id="resultadoFiltro" class="resultado-filtro"></div>
+      </section>
+    </main>
+
+    <footer>
+      <img src="./img/logoclaro.png" alt="vibeOn" />
+
+      <p>Sua música. Sua playlist. Sua vibe.</p>
+
+      <small>
+        Projeto de Playlist Web • CSS desenvolvido com auxílio de IA: ChatGPT
+      </small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
